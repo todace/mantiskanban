@@ -130,7 +130,7 @@
 												
 													<div class="input-group">
 														<div class="input-group-btn">
-															<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Add Existing <span class="caret"></span></button>
+															<button type="button" class="btn-sm btn-default dropdown-toggle" data-toggle="dropdown">Add Existing <span class="caret"></span></button>
 															<ul id="edit-story-tags-list" class="dropdown-menu">
 																<li><a href="#">Tag 1</a></li>
 																<li><a href="#">Tag 2</a></li>
@@ -138,7 +138,7 @@
 														</div>
 														<input type="text" id="edit-story-new-tag" class="form-control">
 														<div class="input-group-btn">
-													  		<div class="btn btn-danger" onclick="AddNewTagFromEditForm();"><span class="glyphicon glyphicon-plus"> Add</span></div>
+													  		<div class="btn-sm btn-danger" onclick="AddNewTagFromEditForm();"><span class="glyphicon glyphicon-plus"> Add</span></div>
 														</div>
 													</div>
 											</div>										
@@ -200,7 +200,7 @@
 									<div class="tab-pane" id="tabs-3">
 										<div class="fill">
 											<div id="edit-story-attachment-container" name="edit-story-attachment-container" class="attachmentsarea"></div>
-											<div class="btn-group">
+											<div class="btn-group-sm">
 												<div class="btn btn-success" id="edit-story-new-attach-save-button" name="" onclick="SaveNewAttachments();"><span class="glyphicon glyphicon-arrow-up"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upload Attachments To Story&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-up"></span></div>
 												<div class="btn btn-warning" onclick="ClearUploadList();">Clear Upload List</div>
 											</div>
@@ -229,7 +229,7 @@
 						<div class="editing-header">
 							<h4>Add a New Story</h4>
 						</div>
-						<div class="btn-group editing-buttons">
+						<div class="btn-group-sm editing-buttons">
 							<div onclick="CloseAddStory();" class="btn btn-warning">Close</div>
 							<div onclick="Kanban.AddStoryFromFormData();" class="btn btn-primary">Save New Story</div>
 						</div>
@@ -290,9 +290,9 @@
 						<div class="editing-header">
 							<h4>Settings</h4>
 						</div>
-						<div class="btn-group editing-buttons">
-							<div onclick="CloseSettings();" class="btn-small btn-warning">Close</div>							
-							<div onclick="Kanban.SaveSettings(); CloseSettings();" class="btn-small btn-primary">Save Settings</div>
+						<div class="btn-group-sm editing-buttons">
+							<div onclick="CloseSettings();" class="btn btn-warning">Close</div>							
+							<div onclick="Kanban.SaveSettings(); CloseSettings();" class="btn btn-primary">Save Settings</div>
 						</div>
 						<div class="editing-content">
 							<form class="form-horizontal" onsubmit="Kanban.SaveSettings(); CloseSettings();">
