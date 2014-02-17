@@ -1,0 +1,2 @@
+* severity as color and editable filed in story add and story edit
+* attachments are still not working
