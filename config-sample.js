@@ -35,6 +35,9 @@ Kanban.CategoryIconMap =  {
 	"Feature" : "star"
 }
 
+extraSettings = {
+  mantisURL:"mantis.url"
+}
 
 /// This is used to just define the Default Settings object, this info gets saved to local storage for next login
 var DefaultSettings = {
