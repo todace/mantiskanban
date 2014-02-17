@@ -1001,7 +1001,7 @@ function EditStory(storyID) {
 	//});
 
 	var thisStory = Kanban.GetStoryByFieldValue("ID", storyID);
-	document.getElementById("edit-story-title").innerHTML = "<a href=http://" + extraSettings.mantisURL + "/view.php?id=" + thisStory.ID + ">"+ thisStory.ID + "</a> " + (thisStory.Summary.length > 70 ? thisStory.Summary.substring(0, 67) + "..." : thisStory.Summary);
+	document.getElementById("edit-story-title").innerHTML = "<a href=http://" + extraSettings.mantisURL + "/view.php?id=" + thisStory.ID + " target='_blank' >"+ thisStory.ID + "</a> " + (thisStory.Summary.length > 70 ? thisStory.Summary.substring(0, 67) + "..." : thisStory.Summary);
 	//$("#edit-story-form").dialog({ title: "Edit Story: " + thisStory.ID + " " + (thisStory.Summary.length > 40 ? thisStory.Summary.substring(0, 37) + "..." : thisStory.Summary) });
 	$("#edit-story-id").val(thisStory.ID);
 	$("#edit-summary").val(thisStory.Summary);

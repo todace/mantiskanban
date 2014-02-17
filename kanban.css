@@ -525,16 +525,16 @@ div.notecontainer {
 .kanbanstoryissuenumber{
 	display: block;
 	font-size: 10px;
-	font-weight: bolder;
+/*	font-weight: bolder;*/
 	height: 35px;
 	padding-top: 0px;
 	padding-left: 3px;
   position      : absolute;
   top           : 0px;
-  width: 40px;
+  width: 45px;
   text-align: left;
   color:#ffffff;
-	background: linear-gradient(135deg, #454545 0%, #454545 50%,rgba(255,255,255,0) 51%,rgba(255,255,255,0) 100%); /* W3C */
+	background: linear-gradient(170deg, #454545 0%, #454545 48%,rgba(255,255,255,0) 51%,rgba(255,255,255,0) 100%); /* W3C */
 }
 
 

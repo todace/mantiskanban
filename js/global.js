@@ -39,7 +39,7 @@ function GetStyleCodeFor3DigitsHalfShaded(digits) {
 
 	var colorObject = GetColorCodeFor3Digits(digits);
 	var textContrast = GetColorContrastForRBG(colorObject.first, colorObject.second, colorObject.third);
-	return "color: " + textContrast + "; background: linear-gradient(135deg, rgba(255,255,255,0) 0%,rgba(41,137,216,0) 50%,rgba(" + colorObject.first + "," + colorObject.second + "," + colorObject.third + ",1) 51%,rgba(" + colorObject.first + "," + colorObject.second + "," + colorObject.third + ",1) 100%) !important; /* W3C */"
+	return "color: " + textContrast + "; background: linear-gradient(170deg, rgba(255,255,255,0) 37%,rgba(41,137,216,0) 40%,rgba(" + colorObject.first + "," + colorObject.second + "," + colorObject.third + ",1) 55%,rgba(" + colorObject.first + "," + colorObject.second + "," + colorObject.third + ",1) 100%) !important; /* W3C */"
 }
 
 function componentToHex(c) {
