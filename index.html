@@ -87,7 +87,7 @@
 								<div class="btn btn-default btn-small" onclick="Logout();"><i class="glyphicon glyphicon-log-out"></i> Logout</div>
 								<div class="" style="display:inline-block; padding-left: 20px;">
 									<div class="btn btn-primary btn-small" onclick="SearchForStory()"><i class="glyphicon glyphicon-search"></i> Go</div>
-									<input type="text" id="searchfield" placeholder="Issue #" class="form-control input-small search-query" style="width:70px;" onkeyup="if(this.value.length > 0 && event.keyCode == 13) { SearchForStory(); }"/>
+									<input type="text" id="searchfield" placeholder="Issue #" class="form-control input-sm search-query" style="width:70px;" onkeyup="if(this.value.length > 0 && event.keyCode == 13) { SearchForStory(); }"/>
 								</div>
 							</div>
 						</div>
@@ -99,9 +99,9 @@
 					<div id="kanbancontent"></div>
 					<div id="edit-story-form" class="editform" style="display:none;" title="Edit Story">
 						<div class="editing-header">
-							<h4 id="edit-story-title">Edit Story</h4>
+							<h6 id="edit-story-title">Edit Story</h6>
 						</div>
-						<div class="btn-group editing-buttons" style="">
+						<div class="btn-group-sm editing-buttons" style="">
 							<div onclick="DeleteIssue();CloseEditStory();" class="btn btn-danger pull-left">Delete</div>
 							<div onclick="CloseEditStory();" class="btn btn-warning">Hide</div>
 							<div onclick="UpdateStoryFromFormData(); CloseEditStory();" class="btn btn-primary">Save changes</div>
@@ -109,10 +109,9 @@
 						<div class="editing-content">
 								<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
 									<li class="active" ><a href="#tabs-1" data-toggle="tab">General</a></li>
-									<li><a href="#tabs-2" data-toggle="tab">Description</a></li>
-									<li><a href="#tabs-3" data-toggle="tab">Notes</a></li>
-									<li><a href="#tabs-4" data-toggle="tab">Attachments</a></li>
-									<li><a href="#tabs-5" data-toggle="tab">History</a></li>
+									<li><a href="#tabs-2" data-toggle="tab">Notes</a></li>
+									<li><a href="#tabs-3" data-toggle="tab">Attachments</a></li>
+									<li><a href="#tabs-4" data-toggle="tab">History</a></li>
 								</ul>
 								<div class="tab-content">
 									<div class="tab-pane active" id="tabs-1">
@@ -121,7 +120,7 @@
 											<div class="control-group col-xs-12">
 												<label class="control-label" for="edit-summary">Summary:</label>
 												<div class="controls">
-													<input type="text" name="edit-summary" id="edit-summary" class="form-control input-small" />
+													<input type="text" name="edit-summary" id="edit-summary" class="form-control input-sm" />
 												</div>
 											</div>
 											<div class="control-group col-xs-12">
@@ -143,65 +142,62 @@
 														</div>
 													</div>
 											</div>										
-											<div class="control-group col-xs-6">
+											<div class="control-group col-xs-6 col-md-4">
 												<label class="control-label" for="edit-project">Project:</label>
 												<div class="controls">
-													<select name="edit-project" id="edit-project" class="form-control input-small"></select>
+													<select name="edit-project" id="edit-project" class="form-control input-sm"></select>
 												</div>
 											</div>
-											<div class="control-group col-xs-6">
+											<div class="control-group col-xs-6 col-md-4">
 												<label class="control-label" for="edit-status">Status:</label>
 												<div class="controls">
-													<select name="edit-status" id="edit-status" class="form-control input-small"></select>
+													<select name="edit-status" id="edit-status" class="form-control input-sm"></select>
 												</div>
 											</div>
-											<div class="control-group col-xs-6">
+											<div class="control-group col-xs-6 col-md-4">
 												<label class="control-label" for="edit-priority">Priority:</label>
 												<div class="controls">
-													<select name="edit-priority" id="edit-priority" class="form-control input-small"></select>
+													<select name="edit-priority" id="edit-priority" class="form-control input-sm"></select>
 												</div>
 											</div>
-											<div class="control-group col-xs-6">
+											<div class="control-group col-xs-6 col-md-4">
 												<label class="control-label" for="edit-category">Category</label>
 												<div class="controls">
-													<select name="edit-category" id="edit-category" class="form-control input-small"></select>
+													<select name="edit-category" id="edit-category" class="form-control input-sm"></select>
 												</div>
-											</div>											
-											<div class="control-group col-xs-6">
+											</div>																					
+											<div class="control-group col-xs-6 col-md-4">
 												<label class="control-label" for="edit-reporter">Reporter:</label>
 												<div class="controls">
-													<select name="edit-reporter" id="edit-reporter" class="form-control input-small"></select>
+													<select name="edit-reporter" id="edit-reporter" class="form-control input-sm"></select>
 												</div>
 											</div>
-											<div class="control-group col-xs-6">
+											<div class="control-group col-xs-6 col-md-4">
 												<label class="control-label" for="edit-assignedto">Assigned To:</label>
 												<div class="controls">
-													<select name="edit-assignedto" id="edit-assignedto" class="form-control input-small"></select>
+													<select name="edit-assignedto" id="edit-assignedto" class="form-control input-sm"></select>
 												</div>
 											</div>
-											<div class="control-group col-xs-10">
+											<div class="control-group col-xs-10 col-md-4">
 												<label class="control-label" for="edit-datesubmitted">Date Submitted:</label>
 												<div class="controls">
 													<div style="display:inline-block;" id="edit-datesubmitted"></div>
 												</div>
 											</div>
-
 										</form>
-									</div>
-									<div class="tab-pane form-controls" id="tabs-2">
-										<label for="edit-description">Description</label>
 										<textarea name="edit-description" id="edit-description" class="input-large form-control" placeholder="Description"></textarea>
 										<label for="edit-reproduce">Steps</label>
 										<textarea name="edit-reproduce" id="edit-reproduce" class="input-large form-control" placeholder="Steps"></textarea>
+
 									</div>
-									<div class="tab-pane" id="tabs-3">
+									<div class="tab-pane" id="tabs-2">
 										<div class="fill">
 											<div id="edit-story-notes-container" name="edit-story-notes-container" class="notesarea"></div>
 											<div class="btn btn-success addNoteButton" id="edit-story-new-note-save-button" name=""><span class="glyphicon glyphicon-arrow-up"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Note&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-up"></span></div><br>
 											<textarea class="edit-newnotetext input-large form-control" id="edit-newnotetext" name="edit-newnotetext" title="Enter new notes here."></textarea>
 										</div>
 									</div>
-									<div class="tab-pane" id="tabs-4">
+									<div class="tab-pane" id="tabs-3">
 										<div class="fill">
 											<div id="edit-story-attachment-container" name="edit-story-attachment-container" class="attachmentsarea"></div>
 											<div class="btn-group">
@@ -221,7 +217,7 @@
 											<div id="newAttachmentList" class="newattachmentcontainer"></div>
 										</div>
 									</div>
-									<div class="tab-pane" id="tabs-5">
+									<div class="tab-pane" id="tabs-4">
 										<div class="fill">
 											History
 										</div>
@@ -295,8 +291,8 @@
 							<h4>Settings</h4>
 						</div>
 						<div class="btn-group editing-buttons">
-							<div onclick="CloseSettings();" class="btn btn-warning">Close</div>							
-							<div onclick="Kanban.SaveSettings(); CloseSettings();" class="btn btn-primary">Save Settings</div>
+							<div onclick="CloseSettings();" class="btn-sm btn-warning">Close</div>							
+							<div onclick="Kanban.SaveSettings(); CloseSettings();" class="btn-sm btn-primary">Save Settings</div>
 						</div>
 						<div class="editing-content">
 							<form class="form-horizontal" onsubmit="Kanban.SaveSettings(); CloseSettings();">
@@ -318,13 +314,7 @@
 										<tr>
 											<td colspan="2">
 												<label class="control-label" for="settings-list-width">Auto-Fit When Browser Resizes</label>
-											</td>
-										</tr>
-										<tr>
-											<td>												
-												<div class="controls">
 													<input type="checkbox" class="form-control" name="settings-autofit-onresize" id="settings-autofit-onresize" />
-												</div>
 											</td>
 										</tr>
 										<tr>
@@ -336,6 +326,18 @@
 											<td colspan="2">												
 												<div class="controls">
 													<input type="text" name="settings-connectURL" id="settings-connectURL" class="form-control" placeholder="Mantis Connect URL" />
+												</div>
+											</td>
+										</tr>
+  									<tr>
+											<td colspan="2">
+												<label class="control-label" for="settings-list-width">Mantis Main URL</label>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">												
+												<div class="controls">
+													<input type="text" name="settings-mantisURL" id="settings-mantisURL" class="form-control" placeholder="Mantis Main URL" />
 												</div>
 											</td>
 										</tr>

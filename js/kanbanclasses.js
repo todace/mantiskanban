@@ -499,7 +499,7 @@ KanbanStory.prototype = {
 		if(this.HandlerName != "") {
 			storyDivButton.setAttribute("style", GetStyleCodeFor3DigitsHalfShaded(this.HandlerName.substring(0, 3)));
 		}
-		storyDivButton.innerHTML = this.HandlerName.substring(0, 1).toUpperCase() + this.HandlerName.substring(1, 2);
+		storyDivButton.innerHTML = this.HandlerName.substring(0, 1).toUpperCase() + this.HandlerName.substring(1, 6);
 		storyDivButtonContainer.appendChild(storyDivButton);
 
 		var storyDivTitle = document.createElement("span");
