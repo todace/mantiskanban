@@ -531,7 +531,7 @@ div.notecontainer {
 	padding-left: 3px;
   position      : absolute;
   top           : 0px;
-  width: 45px;
+  width: 40px;
   text-align: left;
   color:#ffffff;
 	background: linear-gradient(170deg, #454545 0%, #454545 48%,rgba(255,255,255,0) 51%,rgba(255,255,255,0) 100%); /* W3C */
@@ -552,7 +552,7 @@ div.notecontainer {
   position      : absolute;
   display: block;
   top: 0px;
-  width: 45px;
+  width: 40px;
   height: 35px;
 	color:#FFFFFF;
 	padding-left: 8px;
@@ -571,8 +571,8 @@ div.notecontainer {
 }
 .kanbanstorytitle>span,.kanbanstorytitle>br,.kanbanstorytitlesecondrow>.glyphicon {
 	font-size:6pt;
-	margin-left: 3px;
-	padding-left: 3px;
+	margin-left: 0px;
+	padding-left: 0px;
 }
 
 
