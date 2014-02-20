@@ -361,7 +361,7 @@ function SelectProject(openStoryID) {
 
 	VerifyDefaultFitlers();
 
-	document.getElementById("selected-project-name").innerHTML = Kanban.CurrentProject.Name;
+	document.getElementById("selected-project-name").innerHTML = "<a href=http://" + extraSettings.mantisURL +"/view_all_bug_page.php target='_blank' >"  + Kanban.CurrentProject.Name + "</a>";
 
 	if(Mantis.DefaultFilterID !== null && Mantis.DefaultFilterID != 0) {
 		window.setTimeout(function(filterID, retObj) {
