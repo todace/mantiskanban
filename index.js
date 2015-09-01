@@ -1,5 +1,7 @@
 var LoadingIssuesList = new Array();
 var DebugOn = false;
+var $ = jQuery;
+
 // usage: log('inside coolFunc',this,arguments);
 // http://paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
 // added this logging function from paul irish to debug if needed.
@@ -16,6 +18,19 @@ window.log = function(){
 
 	}
 };
+
+var urlParams;
+(window.onpopstate = function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+})();
 
 window.addEventListener("load", window_load);
 
@@ -151,6 +166,10 @@ function Login() {
 	Kanban.ApplySettingsAtLogin();
 
 	//saveCurrentSettings();
+	if(urlParams.project) {
+		document.getElementById("seletedproject").value = urlParams.project;
+	}
+
 	
 	LoadKanbanProjects();
 	BuildProjectsGUI();
@@ -158,6 +177,12 @@ function Login() {
 	
 	HideLoginArea();
 	ShowProjectArea();
+	
+	if(urlParams.issue) {
+		document.getElementById("searchfield").value = urlParams.issue;
+		SearchForStory();
+		return;
+	}
 	
 	SelectProject();
 
@@ -361,14 +386,18 @@ function SelectProject(openStoryID) {
 
 	VerifyDefaultFitlers();
 
-	document.getElementById("selected-project-name").innerHTML = "<a href=http://" + extraSettings.mantisURL +"/view_all_bug_page.php target='_blank' >"  + Kanban.CurrentProject.Name + "</a>";
-
+	if(Kanban.CurrentProject.ParentProject) {
+		document.getElementById("selected-project-name").innerHTML = Kanban.CurrentProject.ParentProject.Name + "&nbsp;&nbsp;/&nbsp;&nbsp;" + Kanban.CurrentProject.Name;	
+	} else {
+		document.getElementById("selected-project-name").innerHTML = Kanban.CurrentProject.Name;	
+	}
+	
 	if(Mantis.DefaultFilterID !== null && Mantis.DefaultFilterID != 0) {
 		window.setTimeout(function(filterID, retObj) {
 			LoadFilterAsync(Mantis.DefaultFilterID, 0, 0, function(filterID, retObj) {
 				DoneLoadingIssuesCallback(filterID, retObj);
 				if(document.getElementById("searchfield").value != "") {
-					SearchForStory(true);
+					SearchForStory(false);
 				}
 			});
 		}, 0);
@@ -380,7 +409,7 @@ function SelectProject(openStoryID) {
 		CreateKanbanStoriesFromMantisIssues(retObj);
 		$(".tempLoadingDiv").hide();//hide the loading gifs
 		if(document.getElementById("searchfield").value != "") {
-			SearchForStory(true);
+			SearchForStory(false);
 		}
 
 		StopLoading();
