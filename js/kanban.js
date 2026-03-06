@@ -40,7 +40,7 @@ var Kanban = {
 	},
 
 	GetUserByID : function(userid) {
-		for(var ui = 0; ui < Kanban.CurrentProject.Users.lenth; ui++) {
+		for(var ui = 0; ui < Kanban.CurrentProject.Users.length; ui++) {
 			if(Kanban.CurrentProject.Users[ui].ID == userid) return Kanban.CurrentProject.Users[ui];
 		}
 		return null;

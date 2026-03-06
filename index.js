@@ -168,7 +168,7 @@ function Login() {
 
 function DeleteIssue(kanbanIssue) {
 	try {
-		if(confirm("Are you sure you want to delete this issues?")) {
+		if(confirm("Are you sure you want to delete this issue?")) {
 			StartLoading();
 			var storyID = $("#edit-story-id").val();
 			var kanbanStory = Kanban.GetStoryByFieldValue("ID", storyID);
